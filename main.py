@@ -30,7 +30,7 @@ class UserLogin(BaseModel):
 
 
 def get_db():
-    conn = psycopg2.connect(os.getenv("postgresql://xorazm_job_db_user:LjQlwMjWeg67uemmDaYu6JfFq3B6icRA@dpg-d73tg4muk2gs739rct1g-a/xorazm_job_db"))
+    conn = psycopg2.connect(os.getenv("DATABASE_URL"))
     return conn
 
 
