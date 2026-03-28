@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
 import psycopg2
-
+import os
 from fastapi import WebSocket
 from typing import Dict, List
 
@@ -27,13 +27,10 @@ class UserLogin(BaseModel):
 
 
 # ====== DB CONNECT ======
+import os
+
 def get_db():
-    conn = psycopg2.connect(
-        host="localhost",
-        database="xorazm_job",
-        user="postgres",
-        password="1234"
-    )
+    conn = psycopg2.connect(os.getenv("DATABASE_URL"))
     return conn
 
 
