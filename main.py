@@ -27,7 +27,7 @@ class UserLogin(BaseModel):
 
 
 # ====== DB CONNECT ======
-import os
+
 
 def get_db():
     conn = psycopg2.connect(os.getenv("DATABASE_URL"))
